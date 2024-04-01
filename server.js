@@ -11,6 +11,11 @@ app.get('/api/v1/bootcamps', (req, res) => {
     res.status(200).json({ success: true, msg: 'Show all Bootcamps' })
 });
 
+// GET /api/v1/bootcamps/:id
+app.get('/api/v1/bootcamps/:id', (req, res) => {
+    res.status(200).json({ success: true, msg: `Show bootcamps ${req.params.id}` })
+});
+
 // POST /api/v1/bootcamps
 app.post('/api/v1/bootcamps', (req, res) => {
     res.status(200).json({ success: true, msg: 'Create new Bootcamps' })

@@ -21,6 +21,13 @@ const BootcampSchema = new mongoose.Schema({
             'Please use a valid URL with HTTP or HTTOS'
         ]
     },
+    phone: {
+        type: String,
+        maxlength: [
+            20,
+            'Phone number can not be longer than 20 characters'
+        ]
+    }
 });
 
 module.exports = mongoose.model

@@ -38,7 +38,26 @@ const BootcampSchema = new mongoose.Schema({
     address: {
         type: String,
         required: [true, 'Please add an address']
-    }
+    },
+    location: {
+        // GeoJSON Point 
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+          },
+          coordinates: {
+            type: [Number],
+            required: true,
+            index: '2dsphere'
+          },
+          formattedAddress: String,
+          Street: String,
+          city: String,
+          state: String,
+          zipcode: String,
+          country: String
+    },
 });
 
 module.exports = mongoose.model

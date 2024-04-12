@@ -15,7 +15,7 @@ connectDB();
 const bootcamps = require('./routes/bootcamps')
 
 // Body Parser - middleware
-app.use(express.json());
+// app.use(express.json());
 
 const app = express();
 
@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5000
 
 const server = app.listen(
     PORT, 
-    console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow)
+    console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
 );
 
 // Handle unhandled promise rejection

@@ -14,10 +14,11 @@ connectDB();
 // Route files
 const bootcamps = require('./routes/bootcamps')
 
-// Body Parser - middleware
-// app.use(express.json());
-
 const app = express();
+
+// Body Parser - middleware
+app.use(express.json());
+
 
 // Dev logging middleware
 if (process.env.NODE_ENV === "development") {

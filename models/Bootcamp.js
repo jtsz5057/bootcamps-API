@@ -45,11 +45,11 @@ const BootcampSchema = new mongoose.Schema({
         type: {
             type: String,
             enum: ['Point'],
-            required: true
+            required: false
           },
           coordinates: {
             type: [Number],
-            required: true,
+            required: false,
             index: '2dsphere'
           },
           formattedAddress: String,
@@ -106,8 +106,7 @@ const BootcampSchema = new mongoose.Schema({
 
 // Create bootcamps slug from the name
 BootcampSchema.pre('save', function(next) {
-  this.slug = slugify(this.name, { lower: true });
-  next();  
+  this.slug = slugify(this.name, { lower: true }); 
 });
 
 module.exports = mongoose.model('Bootcamp', BootcampSchema);
